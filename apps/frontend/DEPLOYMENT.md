@@ -11,13 +11,21 @@ This guide will help you deploy the GT Relational Explorer to Vercel with server
 ## Step 1: Environment Variables
 
 1. Copy `.env.example` to `.env.local` (for local development)
-2. In Vercel dashboard, add these environment variables:
+2. In Vercel dashboard, add these environment variables from your Supabase project:
 
 ```bash
-DATABASE_URL="postgresql://username:password@host:5432/database_name?schema=public"
+DATABASE_URL="postgresql://postgres:[password]@db.cjutjtjnizxdkzcbdnqe.supabase.co:5432/postgres"
 NODE_ENV="production"
 CORS_ORIGIN="https://your-app-name.vercel.app"
+
+# Supabase Configuration
+VITE_SUPABASE_URL="https://cjutjtjnizxdkzcbdnqe.supabase.co"
+VITE_SUPABASE_ANON_KEY="sb_publishable_USNcBRV1V1LQAQTPaacXDw_kLK5doJW"
+SUPABASE_SERVICE_ROLE_KEY="sb_secret_C_0XXMe1iRjhGi7GUvNx6g_-1CEYEzJ"
+SUPABASE_JWT_SECRET="your-jwt-secret-here"
 ```
+
+**Note:** Get these values from your Supabase project dashboard under Settings > Environment Variables.
 
 ## Step 2: Database Setup
 
