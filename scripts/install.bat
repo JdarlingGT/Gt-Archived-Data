@@ -1,0 +1,16 @@
+@echo off
+echo Installing GT Explorer Dependencies...
+echo.
+echo Installing root dependencies...
+npm install
+echo.
+echo Installing frontend dependencies...
+npm install --workspace=frontend
+echo.
+echo Installing backend dependencies...
+npm install --workspace=backend
+echo.
+echo Installing dashboard tools dependencies...
+npm install --workspace=dashboard-tools
+echo.
+echo All dependencies installed successfully!

@@ -1,85 +1,101 @@
-# Graston Dashboard Integration
+# GT Explorer
 
-This project integrates the RDS Archived Data with the Graston Dashboard application.
+A unified admin dashboard for Graston Technique data management.
 
-## Components
+## Project Structure
 
-1. **Backend Service** (`backend/server.py`):
-   - Provides API endpoints to access data from CSV and Excel files
-   - Runs on `http://localhost:5000` by default
-   - Requires Python 3.7+ and Flask
-
-2. **React Frontend** (`graston-dashboard/`):
-   - Displays data from the backend API in tables
-   - Includes pages for Users, Businesses, and Events
-   - Requires Node.js and npm
-
-3. **Dashboard Generator** (`generate_dashboard.py`):
-   - Creates an Excel dashboard from CSV files in the Table Data folder
-   - Generates `Graston_Technique_Dashboard.xlsx`
-   - Requires Python 3.7+ and pandas
-
-## Setup and Usage
-
-### 1. Install Backend Dependencies
-```bash
-cd backend
-pip install -r requirements.txt
+```
+GT Explorer/
+├── apps/
+│   ├── frontend/              # React + Vite frontend application
+│   ├── backend/               # Flask backend API
+│   └── dashboard-tools/       # Python scripts and automation tools
+├── data/                      # Data files and static assets
+├── docs/                      # Documentation
+├── config/                    # Configuration files
+├── scripts/                   # Utility scripts
+└── package.json               # Root package.json with workspaces
 ```
 
-### 2. Install Frontend Dependencies
-```bash
-cd graston-dashboard
-npm install
-```
+## Getting Started
 
-### 3. Generate Dashboard (Optional)
-If you need to create or update the Excel dashboard:
-```bash
-pip install -r generate_dashboard_requirements.txt
-python generate_dashboard.py
-```
+### Prerequisites
+- Node.js (v16 or higher)
+- Python (v3.8 or higher)
+- PostgreSQL database
 
-### 4. Run the Backend
-```bash
-cd backend
-python server.py
-```
+### Installation
 
-### 5. Run the Frontend
-```bash
-cd graston-dashboard
-npm start
-```
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd gt-explorer
+   ```
 
-### 6. Access the Application
-Open your browser and go to `http://localhost:3000`
+2. Install dependencies:
+   ```bash
+   npm run install
+   ```
 
-## File Structure
+### Running the Application
 
-- `backend/`: Backend service with Flask API
-- `graston-dashboard/`: React frontend application
-- `Table Data/`: Contains CSV files with data
-- `generate_dashboard.py`: Script to create Excel dashboard
-- `README.md`: This file
+1. Start the development server:
+   ```bash
+   npm run start
+   ```
 
-## API Endpoints
+2. Access the application:
+   - Frontend: http://localhost:5173
+   - Backend API: http://localhost:5000
 
-The backend provides the following API endpoints:
+## Available Scripts
 
-- `GET /api/sheets`: List available sheets in the main dashboard
-- `GET /api/sheet_data?sheet_name=`: Get data from a specific sheet
-- `GET /api/csv_data?file_name=`: Get data from a specific CSV file
+- `npm run dev` - Start frontend development server
+- `npm run dev:backend` - Start backend development server
+- `npm run build` - Build the frontend application
+- `npm run build:backend` - Build the backend application
+- `npm run start` - Start the production server
+- `npm run test` - Run all tests
+- `npm run db:generate` - Generate Prisma client
+- `npm run db:push` - Push database schema
+- `npm run db:migrate` - Run database migrations
+- `npm run db:studio` - Open Prisma Studio
 
-## Data Flow
+## Workspaces
 
-1. CSV files in `Table Data/` folder are processed by `generate_dashboard.py`
-2. The backend API serves data from these files
-3. The React frontend fetches data from the API and displays it in tables
+This project uses npm workspaces to manage multiple packages:
 
-## Troubleshooting
+- `frontend` - React application
+- `backend` - Flask API
+- `dashboard-tools` - Python automation scripts
 
-- Make sure the backend is running before starting the frontend
-- Check console logs for error messages
-- Ensure all dependencies are installed
-- Verify file paths are correct in the configuration
+## Documentation
+
+See the `docs/` directory for detailed documentation:
+- [User Guide](docs/Graston_Dashboard_User_Guide.md)
+- [Enhancement Guide](docs/Graston_Dashboard_Enhancement_Guide.md)
+- [Deployment Guide](docs/DEPLOYMENT.md)
+
+## Data
+
+Data files are stored in the `data/` directory:
+- CSV files with various data types
+- Excel spreadsheets with dashboard data
+- Static assets and backups
+
+## Configuration
+
+Configuration files are stored in the `config/` directory:
+- Environment variables
+- Tailwind CSS configuration
+- Vite configuration
+- ESLint configuration
+- PostCSS configuration
+
+## Scripts
+
+Utility scripts are stored in the `scripts/` directory:
+- Installation scripts
+- Development scripts
+- Testing scripts
+- Deployment scripts

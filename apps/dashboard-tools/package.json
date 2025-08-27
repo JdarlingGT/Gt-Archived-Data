@@ -1,0 +1,16 @@
+{
+  "name": "dashboard-tools",
+  "version": "1.0.0",
+  "description": "GT Explorer Dashboard Tools",
+  "scripts": {
+    "create-dashboard": "python create_dashboard.py",
+    "create-dashboard-v2": "python create_dashboard_v2.py",
+    "enhance-dashboard": "python enhance_dashboard.py",
+    "generate-dashboard": "python generate_dashboard.py",
+    "install-deps": "pip install -r generate_dashboard_requirements.txt"
+  },
+  "dependencies": {
+    "pandas": "^2.2.2",
+    "openpyxl": "^3.1.2"
+  }
+}
