@@ -8,11 +8,6 @@
     "dev": "nodemon --exec python main.py",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "flask": "^3.0.0",
-    "pandas": "^2.2.2",
-    "openpyxl": "^3.1.2"
-  },
   "devDependencies": {
     "nodemon": "^3.1.10"
   }
