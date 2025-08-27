@@ -1,4 +1,13 @@
 {
+  "name": "gt-root",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "npm --prefix gt-relational-explorer run dev",
+    "build": "npm --prefix gt-relational-explorer run build",
+    "vercel-build": "npm --prefix gt-relational-explorer run vercel-build",
+    "start": "npm --prefix gt-relational-explorer run preview"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
