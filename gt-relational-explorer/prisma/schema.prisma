@@ -23,6 +23,7 @@ model User {
   updatedAt DateTime @updatedAt
   licenses  License[]
   orders    Order[]
+  registrations EventRegistration[]
 }
 
 model Event {

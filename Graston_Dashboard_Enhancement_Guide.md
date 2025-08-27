@@ -1,12 +1,15 @@
 # Graston Technique Dashboard Enhancement Guide
 
-This guide explains how to enhance the Graston Technique Dashboard created by the Python script with advanced Excel features like lookup functions, relationships, conditional formatting, and slicers.
-
 ## Table of Contents
+
 1. [Setting up Table Relationships](#setting-up-table-relationships)
+
 2. [Implementing Lookup Functions](#implementing-lookup-functions)
+
 3. [Adding Conditional Formatting](#adding-conditional-formatting)
+
 4. [Creating Slicers](#creating-slicers)
+
 5. [Team-Specific Views](#team-specific-views)
 
 ## Setting up Table Relationships
@@ -36,7 +39,7 @@ The dashboard already includes named tables for each data source. To set up rela
 In the User Dashboard sheet, replace the placeholder cells with actual lookup formulas:
 
 1. **Selected User ID (Cell B30)**:
-   ```
+   ```excel
    =INDEX(users[ID], MATCH(B3, users[first_name]&" "&users[last_name], 0))
    ```
 
@@ -49,23 +52,23 @@ In the User Dashboard sheet, replace the placeholder cells with actual lookup fo
 
 3. **Licenses Section**:
    - For multiple licenses, use the FILTER function (Excel 365/2021):
-     ```
+     ```excel
      =FILTER(licenses, licenses[user_id]=B30)
      ```
    - For older Excel versions, use INDEX/AGGREGATE:
-     ```
+     ```excel
      =IF(B3<>"Select a user", INDEX(licenses[number], AGGREGATE(15, 6, (ROW(licenses[user_id])-ROW(licenses[#Headers]))/(licenses[user_id]=B30), ROW(A1))), "")
      ```
 
 4. **Orders Section**:
    - For multiple orders, use the FILTER function:
-     ```
+     ```excel
      =FILTER(orders, orders[user_id]=B30)
      ```
 
 5. **Event Registrations Section**:
    - For multiple registrations, use the FILTER function:
-     ```
+     ```excel
      =FILTER(event_registrations, event_registrations[user_id]=B30)
      ```
 
