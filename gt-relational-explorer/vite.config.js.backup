@@ -1,0 +1,11 @@
+// Simple Vite config without PostCSS
+export default {
+  plugins: [],
+  css: {
+    postcss: null,
+  },
+  server: {
+    host: true,
+    port: 3000,
+  },
+}
