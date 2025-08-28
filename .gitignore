@@ -1,0 +1,17 @@
+# Node dependencies
+node_modules/
+
+# Build outputs
+dist/
+.vite/
+.prisma/
+
+# Vercel deployment files
+.vercel/
+
+# Environment files
+.env
+
+# OS / editor temp files
+.DS_Store
+*.log
