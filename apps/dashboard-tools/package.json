@@ -7,6 +7,6 @@
     "create-dashboard-v2": "python create_dashboard_v2.py",
     "enhance-dashboard": "python enhance_dashboard.py",
     "generate-dashboard": "python generate_dashboard.py",
-    "install-deps": "pip install -r generate_dashboard_requirements.txt"
+    "install-deps": "pip install -r requirements.txt"
   }
 }
