@@ -5,18 +5,20 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "prisma generate && vite build",
-    "vercel-build": "prisma generate && vite build",
+    "build": "(npx prisma generate || echo 'Warning: Prisma generate failed') && npx vite build",
+    "build:production": "npx prisma generate && npx vite build",
+    "build:offline": "npx vite build",
+    "vercel-build": "npx prisma generate && npx vite build",
     "lint": "eslint .",
     "preview": "vite preview --host --port 4173",
     "start": "node server.js",
     "server": "node server.js",
     "server:dev": "nodemon server.js",
-    "db:generate": "prisma generate",
-    "db:push": "prisma db push",
-    "db:migrate": "prisma migrate dev",
-    "db:studio": "prisma studio",
-    "postinstall": "prisma generate"
+    "db:generate": "npx prisma generate",
+    "db:push": "npx prisma db push",
+    "db:migrate": "npx prisma migrate dev",
+    "db:studio": "npx prisma studio",
+    "postinstall": "npx prisma generate || echo 'Warning: Prisma generate failed during postinstall'"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -28,7 +30,6 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
-    "prisma": "^6.15.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
@@ -46,6 +47,7 @@
     "globals": "^16.3.0",
     "nodemon": "^3.1.10",
     "postcss": "^8.5.6",
+    "prisma": "^6.15.0",
     "tailwindcss": "^4.1.12",
     "vite": "^7.1.2"
   }
