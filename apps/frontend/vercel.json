@@ -19,32 +19,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "DATABASE_URL": "@database_url",
-    "DIRECT_URL": "@direct_url",
-    "NODE_ENV": "production",
-    "VITE_SUPABASE_URL": "@supabase_url",
-    "VITE_SUPABASE_ANON_KEY": "@supabase_anon_key",
-    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
-    "SUPABASE_JWT_SECRET": "@supabase_jwt_secret",
-    "CORS_ORIGIN": "@cors_origin",
-    "SESSION_SECRET": "@session_secret",
-    "NEXT_PUBLIC_SUPABASE_URL": "@next_public_supabase_url",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@next_public_supabase_anon_key"
-  },
-  "build": {
-    "env": {
-      "DATABASE_URL": "@database_url",
-      "DIRECT_URL": "@direct_url",
-      "VITE_SUPABASE_URL": "@supabase_url",
-      "VITE_SUPABASE_ANON_KEY": "@supabase_anon_key",
-      "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
-      "SUPABASE_JWT_SECRET": "@supabase_jwt_secret",
-      "CORS_ORIGIN": "@cors_origin",
-      "SESSION_SECRET": "@session_secret",
-      "NEXT_PUBLIC_SUPABASE_URL": "@next_public_supabase_url",
-      "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@next_public_supabase_anon_key"
-    }
-  }
+  ]
 }
